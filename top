@@ -2,8 +2,6 @@
 
 export GREP_COLORS='ms=01;32:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
-#awk '$2=="K" sub(/K/, "", used){$2=$2/1024^2;$2="GB";} 1'
-
 top | \
 grep -E --color=always "Mem|$"\|"CPU|$"\|"Load average|$"\|"PID|$"\|"PPID|$"\|"  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND|$"\|"used|$"\|"free|$"\|"shrd|$"\|"buff|$"\|"cached|$"\|"usr|$"\|"sis|$"\|"nic|$"\|"idle|$"\|"low|$"\|"io|$"\|"irq|$"\|"sirq|$" \
 # UNCOMMENT BELOW FOR BETA KB TO GB
