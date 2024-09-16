@@ -2,7 +2,7 @@
 
 export GREP_COLORS='ms=01;32:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
-top | \
+/usr/bin/top | \
 grep -E --color=always "Mem|$"\|"CPU|$"\|"Load average|$"\|"PID|$"\|"PPID|$"\|"  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND|$"\|"used|$"\|"free|$"\|"shrd|$"\|"buff|$"\|"cached|$"\|"usr|$"\|"sys|$"\|"nic|$"\|"idle|$"\|"low|$"\|"io|$"\|"irq|$"\|"sirq|$" \
 # UNCOMMENT BELOW FOR BETA KB TO GB
 #| awk '$3 ~ /used/ {sub(/K/, "", $2); val=$2/1024^2; $2=sprintf("%.2f GB", val)} \
