@@ -6,8 +6,9 @@ export GREP_COLORS='ms=01;32:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 
 top | \
 grep -E --color=always "Mem|$"\|"CPU|$"\|"Load average|$"\|"PID|$"\|"PPID|$"\|"  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND|$"\|"used|$"\|"free|$"\|"shrd|$"\|"buff|$"\|"cached|$"\|"usr|$"\|"sis|$"\|"nic|$"\|"idle|$"\|"low|$"\|"io|$"\|"irq|$"\|"sirq|$" | \
-awk '$3 ~ /used/ {sub(/K/, "", $2); val=$2/1024^2; $2=sprintf("%.2f GB", val)} \
-$5 ~ /free/ {sub(/K/, "", $4); val=$4/1024^2; $4=sprintf("%.2f GB", val)} \
-$7 ~ /shrd/{sub(/K/, "", $6); val=$6/1024^2; $6=sprintf("%.2f GB", val)} \
-$9 ~ /buff/{sub(/K/, "", $8); val=$8/1024^2; $8=sprintf("%.2f GB", val)} \
-$11 ~ /cached/{sub(/K/, "", $10); val=$10/1024^2; $10=sprintf("%.2f GB", val)} 1'
+# ENABLE BELOW FOR BETA KB TO GB
+#awk '$3 ~ /used/ {sub(/K/, "", $2); val=$2/1024^2; $2=sprintf("%.2f GB", val)} \
+#$5 ~ /free/ {sub(/K/, "", $4); val=$4/1024^2; $4=sprintf("%.2f GB", val)} \
+#$7 ~ /shrd/{sub(/K/, "", $6); val=$6/1024^2; $6=sprintf("%.2f GB", val)} \
+#$9 ~ /buff/{sub(/K/, "", $8); val=$8/1024^2; $8=sprintf("%.2f GB", val)} \
+#$11 ~ /cached/{sub(/K/, "", $10); val=$10/1024^2; $10=sprintf("%.2f GB", val)} 1'
